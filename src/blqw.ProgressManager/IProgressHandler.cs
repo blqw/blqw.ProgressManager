@@ -1,23 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace blqw
 {
-    public interface IProgressHandler
+    /// <summary>
+    /// 表示一个可绑定进度变更事件的对象
+    /// </summary>
+    public interface IProgressHandler : IProgerssValue
     {
-        /// <summary>
-        /// 进度总数
-        /// </summary>
-        double Total { get; }
-        /// <summary>
-        /// 进度当前值
-        /// </summary>
-        double Value { get; }
-        /// <summary>
-        /// 进度百分比
-        /// </summary>
-        double Percentage { get; }
         /// <summary>
         /// 进度更新事件
         /// </summary>

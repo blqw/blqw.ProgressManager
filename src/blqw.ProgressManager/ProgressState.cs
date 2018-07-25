@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace blqw
+﻿namespace blqw
 {
     /// <summary>
     /// 进度状态

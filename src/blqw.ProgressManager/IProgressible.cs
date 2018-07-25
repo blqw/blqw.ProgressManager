@@ -7,7 +7,7 @@ namespace blqw
     /// <summary>
     /// 表示一个可设置进度的对象
     /// </summary>
-    public interface IProgressible : IProgress<ProgressValueChangedEventArgs>
+    public interface IProgressible : IProgressHandler, IProgress<ProgressValueChangedEventArgs>
     {
 
         /// <summary>
