@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace blqw
+namespace blqw.Progress
 {
     /// <summary>
     /// 表示一个可设置进度的对象

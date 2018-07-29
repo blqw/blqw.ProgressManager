@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace blqw
+namespace blqw.Progress
 {
     /// <summary>
     /// 进度值变更事件参数
@@ -18,7 +18,6 @@ namespace blqw
         {
             Total = total;
             Value = value;
-            Percentage = ProgerssHelper.Percentage(total, value);
         }
 
         /// <summary>
@@ -32,6 +31,6 @@ namespace blqw
         /// <summary>
         /// 进度百分比
         /// </summary>
-        public double Percentage { get; }
+        public double Percentage => ProgerssHelper.Percentage(Total, Value);
     }
 }

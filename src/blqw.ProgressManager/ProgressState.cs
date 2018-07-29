@@ -1,4 +1,4 @@
-﻿namespace blqw
+﻿namespace blqw.Progress
 {
     /// <summary>
     /// 进度状态
@@ -20,7 +20,7 @@
         /// <summary>
         /// 等待中,暂停中
         /// </summary>
-        Waiting = 3,
+        Suspend = 3,
         /// <summary>
         /// 下载完成
         /// </summary>

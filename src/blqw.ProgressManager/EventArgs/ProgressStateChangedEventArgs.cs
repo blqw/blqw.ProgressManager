@@ -1,11 +1,12 @@
-﻿using System;
+﻿using blqw.Function;
+using System;
 
-namespace blqw
+namespace blqw.Progress
 {
     /// <summary>
     /// 进度状态变更事件参数
     /// </summary>
-    public class ProgressStateChangedEventArgs: EventArgs
+    public class ProgressStateChangedEventArgs : StateChangedEventArgs<ProgressState>
     {
         /// <summary>
         /// 初始化事件参数
@@ -13,17 +14,8 @@ namespace blqw
         /// <param name="oldState">旧状态</param>
         /// <param name="newState">新状态</param>
         public ProgressStateChangedEventArgs(ProgressState oldState, ProgressState newState)
+            : base(oldState, newState)
         {
-            OldState = oldState;
-            NewState = newState;
         }
-        /// <summary>
-        /// 旧状态
-        /// </summary>
-        public ProgressState OldState { get; }
-        /// <summary>
-        /// 新状态
-        /// </summary>
-        public ProgressState NewState { get; }
     }
 }

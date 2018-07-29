@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace blqw
+namespace blqw.Progress
 {
     /// <summary>
     /// 表示一个可绑定进度变更事件的对象

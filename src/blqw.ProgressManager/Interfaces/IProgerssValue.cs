@@ -1,7 +1,7 @@
-﻿namespace blqw
+﻿namespace blqw.Progress
 {
     /// <summary>
-    /// 表示一直拥有进度值和进度百分比的对象
+    /// 表示一个拥有进度值和进度百分比的对象
     /// </summary>
     public interface IProgerssValue
     {

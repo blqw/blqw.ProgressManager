@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace blqw
+namespace blqw.Progress
 {
     /// <summary>
     /// 进度完成事件参数

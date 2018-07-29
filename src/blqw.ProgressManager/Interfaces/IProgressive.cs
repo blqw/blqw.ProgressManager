@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace blqw
+namespace blqw.Progress
 {
     /// <summary>
     /// 表示一个会自动变化进度的对象
@@ -18,10 +19,12 @@ namespace blqw
         /// 开始
         /// </summary>
         /// <returns></returns>
-        Task Start();
+        Task Start(CancellationToken cancellation);
         /// <summary>
         /// 挂起
         /// </summary>
         void Suspend();
+
+        event EventHandler<ProgressStateChangedEventArgs> ProgressStateChanged;
     }
 }
