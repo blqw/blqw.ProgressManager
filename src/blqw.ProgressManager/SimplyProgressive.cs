@@ -11,11 +11,17 @@ namespace blqw.Progress
         private readonly Func<IProgress<ProgressValueChangedEventArgs>, CancellationToken, object> _func;
         private readonly Action<IProgress<ProgressValueChangedEventArgs>, CancellationToken> _action;
 
-        public SimplyProgressive(Action<IProgress<ProgressValueChangedEventArgs>, CancellationToken> action) =>
+        public SimplyProgressive(double total, Action<IProgress<ProgressValueChangedEventArgs>, CancellationToken> action)
+        {
+            OnProgressValueChanged(total, 0);
             _action = action ?? throw new ArgumentNullException(nameof(action));
+        }
 
-        public SimplyProgressive(Func<IProgress<ProgressValueChangedEventArgs>, CancellationToken, object> func) =>
+        public SimplyProgressive(double total, Func<IProgress<ProgressValueChangedEventArgs>, CancellationToken, object> func)
+        {
+            OnProgressValueChanged(total, 0);
             _func = func ?? throw new ArgumentNullException(nameof(func));
+        }
 
         public override Task Start(CancellationToken cancellation)
         {

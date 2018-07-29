@@ -14,7 +14,7 @@ namespace demo
         {
             var manager = new ProgressManager();
 
-            manager.Add(new SimplyProgressive((e, token) =>
+            manager.Add(new SimplyProgressive(100, (e, token) =>
             {
                 var total = 100;
                 var value = 0;
@@ -26,8 +26,51 @@ namespace demo
                     e.Report(new ProgressValueChangedEventArgs(total, Math.Min(total, value), null));
                 }
                 e.Report(new ProgressValueChangedEventArgs(total, total, null));
-            }));
+                Console.WriteLine("A完成");
+            })).Start(CancellationToken.None);
 
+            manager.Add(new SimplyProgressive(100, (e, token) =>
+            {
+                var total = 100;
+                var value = 0;
+                var r = new Random();
+                while (value < 100)
+                {
+                    Thread.Sleep(r.Next(200, 800));
+                    value += r.Next(1, 30);
+                    e.Report(new ProgressValueChangedEventArgs(total, Math.Min(total, value), null));
+                }
+                e.Report(new ProgressValueChangedEventArgs(total, total, null));
+                Console.WriteLine("B完成");
+            })).Start(CancellationToken.None);
+            manager.Add(new SimplyProgressive(100, (e, token) =>
+            {
+                var total = 100;
+                var value = 0;
+                var r = new Random();
+                while (value < 100)
+                {
+                    Thread.Sleep(r.Next(200, 800));
+                    value += r.Next(1, 30);
+                    e.Report(new ProgressValueChangedEventArgs(total, Math.Min(total, value), null));
+                }
+                e.Report(new ProgressValueChangedEventArgs(total, total, null));
+                Console.WriteLine("C完成");
+            })).Start(CancellationToken.None);
+            manager.Add(new SimplyProgressive(100, (e, token) =>
+            {
+                var total = 100;
+                var value = 0;
+                var r = new Random();
+                while (value < 100)
+                {
+                    Thread.Sleep(r.Next(200, 800));
+                    value += r.Next(1, 30);
+                    e.Report(new ProgressValueChangedEventArgs(total, Math.Min(total, value), null));
+                }
+                e.Report(new ProgressValueChangedEventArgs(total, total, null));
+                Console.WriteLine("D完成");
+            })).Start(CancellationToken.None);
 
             manager.ProgressValueChanged += Manager_ProgressValueChanged;
 

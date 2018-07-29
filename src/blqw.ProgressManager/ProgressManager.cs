@@ -113,7 +113,7 @@ namespace blqw.Progress
             var value = 0d;
             foreach (var item in _items)
             {
-                if (item.State == ProgressState.Ready || item.State == ProgressState.Progressing)
+                if (item.State != ProgressState.Initial && item.State != ProgressState.Suspend)
                 {
                     total += item.Total;
                     value += item.Value;
@@ -148,7 +148,7 @@ namespace blqw.Progress
 
                     foreach (var item in _items)
                     {
-                        if (item.SetState(ProgressState.Progressing))
+                        if (item.State == ProgressState.Ready && item.SetState(ProgressState.Progressing))
                         {
                             if (Interlocked.Increment(ref _progressCount) >= _parallelCount)
                             {
